@@ -43,7 +43,7 @@ write_yamlpack <- function(file_path = file.path(getwd(), "yamlpack.yml"),
     as.character()
 
   cli::cli_alert_success(
-    sprintf("Found %s CRAN packages", length(pkgs)))
+    sprintf("Found %s {.strong CRAN} packages", length(pkgs)))
 
   return(pkgs)
 
@@ -61,7 +61,7 @@ write_yamlpack <- function(file_path = file.path(getwd(), "yamlpack.yml"),
     as.character()
 
   cli::cli_alert_success(
-    sprintf("Found %s Bioconductor packages", length(pkgs)))
+    sprintf("Found %s {.strong Bioconductor} packages", length(pkgs)))
 
   return(pkgs)
 
@@ -83,7 +83,7 @@ write_yamlpack <- function(file_path = file.path(getwd(), "yamlpack.yml"),
     as.character()
 
   cli::cli_alert_success(
-    sprintf("Found %s GitHub packages", length(pkgs)))
+    sprintf("Found %s {.strong GitHub} packages", length(pkgs)))
 
   return(pkgs)
 
