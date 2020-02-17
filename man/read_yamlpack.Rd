@@ -4,7 +4,7 @@
 \alias{read_yamlpack}
 \title{Read a Previously Saved yamlpack File}
 \usage{
-read_yamlpack(file_path)
+read_yamlpack(file_path = file.path(getwd(), "yamlpack.yml"))
 }
 \arguments{
 \item{file_path}{Path to a yaml file previous saved with `write_yamlpack()`}

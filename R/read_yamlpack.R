@@ -10,7 +10,7 @@
 #' @importFrom cli cli_h1
 #'
 #' @export
-read_yamlpack <- function(file_path) {
+read_yamlpack <- function(file_path = file.path(getwd(), "yamlpack.yml")) {
 
   assertthat::assert_that(file.exists(file_path))
 

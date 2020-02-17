@@ -18,35 +18,42 @@ You can install the released version of yamlpack from
 install.packages("yamlpack")
 ```
 
+Or the development version from: -
+
+``` r
+# install.packages("devtools")
+devtools::install_github("combiz/yamlpack")
+```
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+The complete set of package names and sources currently installed can be
+written to a YAML file using `write_yamlpack()`: -
 
 ``` r
 library(yamlpack)
-## basic example code
+write_yamlpack()
+#> 
+#> ── Finding Installed Packages ─────────────────────────────────────────
+#> ✓ Found 446 CRAN packages
+#> ✓ Found 56 Bioconductor packages
+#> ✓ Found 23 GitHub packages
+#> 
+#> ── Writing yamlpack YAML File ─────────────────────────────────────────
+#> Writing: /home/ckhozoie/Documents/yamlpack/yamlpack.yml
+#> ✓ Successfully exported 525 packages.
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+A YAML file previously saved with `write_yamlpack()` can be read using
+`read_yamlpack()`: -
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+read_yamlpack()
+#> 
+#> ── Reading yamlpack YAML File ─────────────────────────────────────────
+#> Reading: /home/ckhozoie/Documents/yamlpack/yamlpack.yml
+#> ✓ Imported 446 CRAN packages
+#> ✓ Imported 56 Bioconductor packages
+#> ✓ Imported 23 GitHub packages
+#> ✓ Successfully imported 525 packages.
 ```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!

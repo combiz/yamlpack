@@ -9,6 +9,7 @@
 #' @importFrom purrr map map_int
 #' @importFrom dplyr filter select mutate
 #' @importFrom data.table %like%
+#' @importFrom magrittr %>%
 #' @importFrom cli cli_h1 cli_h2 cli_text cli_alert_success
 #'
 #' @export
