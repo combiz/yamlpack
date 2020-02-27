@@ -31,6 +31,6 @@ read_yamlpack <- function(file_path = file.path(getwd(), "yamlpack.yml")) {
   cli::cli_alert_success(
     "Successfully imported {.val {n_packages}} packages.")
 
-
+  return(yamlpack_l)
 
 }
