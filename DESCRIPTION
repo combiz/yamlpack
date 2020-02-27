@@ -16,4 +16,6 @@ Imports:
     BiocManager,
     dplyr,
     magrittr
+Remotes:
+    r-lib/cli
 RoxygenNote: 7.0.2
