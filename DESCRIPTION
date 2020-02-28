@@ -16,7 +16,9 @@ Imports:
     BiocManager,
     dplyr,
     magrittr,
-    data.table
+    data.table,
+    pak
 Remotes:
-    r-lib/cli
+    r-lib/cli,
+    r-lib/pak
 RoxygenNote: 7.0.2
