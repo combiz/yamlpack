@@ -15,7 +15,8 @@ Imports:
     yaml,
     BiocManager,
     dplyr,
-    magrittr
+    magrittr,
+    data.table
 Remotes:
     r-lib/cli
 RoxygenNote: 7.0.2
