@@ -7,18 +7,21 @@
 
 <!-- badges: end -->
 
-The goal of yamlpack is to …
+Yamlpack allows all currently installed R packages and their sources to
+be stored to and restored from a YAML file.
+
+Intended uses include building docker images, installing packages
+en-masse, or re-installing R after a major revision
+(e.g. 3.6.3-\>4.0.0). The default parameters use **pak** for fast,
+parallelized installation of packages (<https://github.com/r-lib/pak>).
+
+For fine-grained version control of packages and maximum
+reproducibility, you probably want the excellent **renv** package
+(<https://github.com/rstudio/renv/>) instead.
 
 ## Installation
 
-You can install the released version of yamlpack from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("yamlpack")
-```
-
-Or the development version from: -
+You can install the development version from: -
 
 ``` r
 # install.packages("devtools")
@@ -32,28 +35,25 @@ written to a YAML file using `write_yamlpack()`: -
 
 ``` r
 library(yamlpack)
-write_yamlpack()
-#> 
-#> ── Finding Installed Packages ─────────────────────────────────────────
-#> ✓ Found 446 CRAN packages
-#> ✓ Found 56 Bioconductor packages
-#> ✓ Found 23 GitHub packages
-#> 
-#> ── Writing yamlpack YAML File ─────────────────────────────────────────
-#> Writing: /home/ckhozoie/Documents/yamlpack/yamlpack.yml
-#> ✓ Successfully exported 525 packages.
+write_yamlpack("yamlpack.yml")
 ```
+
+![Example of writing a yamlpack file](imgs/write_example.gif)
 
 A YAML file previously saved with `write_yamlpack()` can be read using
 `read_yamlpack()`: -
 
 ``` r
-read_yamlpack()
-#> 
-#> ── Reading yamlpack YAML File ─────────────────────────────────────────
-#> Reading: /home/ckhozoie/Documents/yamlpack/yamlpack.yml
-#> ✓ Imported 446 CRAN packages
-#> ✓ Imported 56 Bioconductor packages
-#> ✓ Imported 23 GitHub packages
-#> ✓ Successfully imported 525 packages.
+yamlpack <- read_yamlpack("yamlpack.yml")
 ```
+
+![Example of reading a yamlpack file](imgs/read_example.gif)
+
+Packages in a yamlpack object read in using `write_yamlpack()` can be
+installed using `install_yamlpack()`: -
+
+``` r
+install_yamlpack(yamlpack)
+```
+
+![Example of installing a yamlpack file](imgs/install_example.gif)
